@@ -27,7 +27,11 @@ public class Program {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
+		finally {
+			rs.close();
+			DB.closeStatement(st);
+			DB.closeConnection();
+		}
 	}
 
 }
